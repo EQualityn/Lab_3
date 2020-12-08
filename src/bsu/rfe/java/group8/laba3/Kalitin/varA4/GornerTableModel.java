@@ -58,7 +58,7 @@ public class GornerTableModel extends AbstractTableModel {
                 if ((result[0] < 1) && (result[0] > -1)){
                     flag = true;
                 }
-                if (flag == true){
+                if (flag){
                     return true;
                 } else
                     return false;

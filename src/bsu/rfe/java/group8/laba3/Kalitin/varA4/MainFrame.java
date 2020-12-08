@@ -53,7 +53,7 @@ public class MainFrame extends JFrame {
 
     public MainFrame(Double[] coefficients) {
         //вызов конструктора предка
-        super("Тубулирование многочлена на отрезке по схеме Горнера");
+        super("Тубулирование многочлена на отрезке по схеме Горнера ");
         //передаем во внутреннее поле кэфы
         this.coefficients = coefficients;
         //размеры окна
@@ -114,7 +114,7 @@ public class MainFrame extends JFrame {
         saveToGraphicsMenuItem = fileMenu.add(saveToGraphicsAction);
         saveToGraphicsMenuItem.setEnabled(false);
         //Создать новое "действие" по поиску значений многчлена
-        Action searchValueAction = new AbstractAction("Найти значение многчлена") {
+        Action searchValueAction = new AbstractAction("Найти значение многочлена") {
             @Override
             public void actionPerformed(ActionEvent event) {
                 //запросить пользователя ввести искомую строчку
@@ -226,7 +226,7 @@ public class MainFrame extends JFrame {
                 getContentPane().validate();
             }
         });
-        //Все кнопки в контейнер помещаем
+        //Помещаем все кнопки в контейнер
         Box hBoxButtons = Box.createHorizontalBox();
         hBoxButtons.setBorder(BorderFactory.createBevelBorder(1));
         hBoxButtons.add(Box.createHorizontalGlue());
@@ -265,7 +265,7 @@ public class MainFrame extends JFrame {
             //создать новый символьный поток вывода, направленный в указанный файл
             PrintStream out = new PrintStream(selectedFile);
             //записать в поток вывода заглавочное сведение
-            out.println("Рузультаты тубулирования многчлена по схеме Горнера");
+            out.println("Результаты тубулирования многчлена по схеме Горнера");
             out.println("Многочлен");
             for (int i = 0; i < coefficients.length; i++) {
                 out.print(coefficients[i] + "*X^" + (coefficients.length - i - 1));
