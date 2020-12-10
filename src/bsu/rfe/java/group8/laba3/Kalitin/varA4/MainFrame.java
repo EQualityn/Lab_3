@@ -207,7 +207,7 @@ public class MainFrame extends JFrame {
             }
         });
         //создать кнопку очистить поля
-        JButton buttonClear = new JButton("Очистить поля");
+        JButton buttonClear = new JButton("Очистить все поля");
         buttonClear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ev) {
@@ -275,7 +275,7 @@ public class MainFrame extends JFrame {
             }
             out.println("");
             out.println("Интервал от " + data.getFrom() + " до " + data.getTo() + "с шагом " + data.getStep());
-            out.println("====================================================");
+            out.println("========================================================");
             //записать в поток вывода значения в точках
             for (int i = 0; i < data.getRowCount(); i++) {
                 out.println("Значение в точке " + data.getValueAt(i, 0) + " равно " + data.getValueAt(i, 1));
