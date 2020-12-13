@@ -7,8 +7,7 @@ public class GornerTableModel extends AbstractTableModel {
     private Double from;
     private Double to;
     private Double step;
-    private double result[] = new double[1];
-
+    private double result=0;
     public GornerTableModel(Double from, Double to, Double step, Double[] coefficients){
         this.from = from;
         this.to = to;
@@ -28,7 +27,6 @@ public class GornerTableModel extends AbstractTableModel {
     public int getColumnCount(){
         return 3;
     }
-
     @Override
     public int getRowCount() {
         //вычислить количество точек между началом и концом отрезка исходя из шага тубулирования
@@ -44,18 +42,18 @@ public class GornerTableModel extends AbstractTableModel {
                 return x;
             case 1:
                 //если запрашивается значение 2-го столбца, то это значение многочлена
-                result[0] = 0.0;
+                result = 0.0;
                 for (int i = 0; i < coefficients.length; i++) {
-                    result[0] += Math.pow(x, coefficients.length - 1 - i) * coefficients[i];
+                    result += Math.pow(x, coefficients.length - 1 - i) * coefficients[i];
                 }
-                return result[0];
+                return result;
             default:
-                result[0] = 0.0;
+                result= 0.0;
                 for (int i = 0; i < coefficients.length; i++) {
-                    result[0] += Math.pow(x, coefficients.length - 1 - i) * coefficients[i];
+                    result += Math.pow(x, coefficients.length - 1 - i) * coefficients[i];
                 }
                 boolean flag = false;
-                if ((result[0] < 1) && (result[0] > -1)){
+                if ((result < 1) && (result > -1)){
                     flag = true;
                 }
                 if (flag){

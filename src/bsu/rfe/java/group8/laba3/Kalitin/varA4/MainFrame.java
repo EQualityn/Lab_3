@@ -50,7 +50,7 @@ public class MainFrame extends JFrame {
     private GornerTableCellRenderer renderer = new GornerTableCellRenderer();
     //модель данный с результатами вычислений
     private GornerTableModel data;
-
+    //MainFrame
     public MainFrame(Double[] coefficients) {
         //вызов конструктора предка
         super("Тубулирование многочлена на отрезке по схеме Горнера ");
@@ -119,7 +119,6 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent event) {
                 //запросить пользователя ввести искомую строчку
                 String value = JOptionPane.showInputDialog(MainFrame.this, "Введите значение для поиска", "Поиск значения", JOptionPane.QUESTION_MESSAGE);
-                //
                 renderer.setNeedle(value);
                 //обновить таблицуустановить значение в качестве иголки
                 getContentPane().repaint();
@@ -170,7 +169,6 @@ public class MainFrame extends JFrame {
         hBoxRange.setPreferredSize(new Dimension(new Double(hBoxRange.getMaximumSize().getWidth()).intValue(), new Double(hBoxRange.getMaximumSize().getHeight()).intValue() * 2));
         // ставим область в верхнюю часть
         getContentPane().add(hBoxRange, BorderLayout.NORTH);
-
         //Создаем кнопку вычислить
         JButton buttonCalc = new JButton("Вычислить");
         //задаем действие на нажатие на кнопку
@@ -243,7 +241,6 @@ public class MainFrame extends JFrame {
         hBoxResult.add(new JPanel());
         getContentPane().add(hBoxResult, BorderLayout.CENTER);
     }
-
     protected void saveToGraphicsFile(File selectedFile) {
         try {
             //создать новый байтовый поток вывода, направленный в указанный файл
@@ -286,7 +283,6 @@ public class MainFrame extends JFrame {
             //можно не обрабатывать так как мы файл создаем, а не открываем
         }
     }
-
     public static void main(String[] args) {
         //Если не задано и одного аргумента
         //продолжать невозможно
@@ -304,7 +300,7 @@ public class MainFrame extends JFrame {
             }
         } catch (NumberFormatException ex) {
             //если преобразование не возможно сообщаем об ошибке
-            System.out.println("Ошибка преобразования строки '" + args[i] + "' в число типа Double");
+            System.out.println("Ошибка преобразования строки '" + args[i] + "' в число вещественного типа");
             System.exit(-2);
         }
         MainFrame frame = new MainFrame(coefficients);

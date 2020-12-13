@@ -13,7 +13,6 @@ public class GornerTableCellRenderer implements TableCellRenderer {
     //ищем ячейки, строковое представление совпадает с needle(иголкой)
     private String needle = null;
     private DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance();
-
     public GornerTableCellRenderer() {
         //Показать только 5 знаков после запятой
         formatter.setMaximumFractionDigits(5);
